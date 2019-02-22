@@ -1,9 +1,22 @@
 # Finish the implementation of the Car class so it has the functionality described below
 
 class Car
+  @@all = []
+  attr_accessor :make, :model
 
+  def initialize (make, model)
+    self.make = make
+    self.model = model
+    @@all << self
+  end
 
+  def drive
+    return "VROOOOOOOOOOOOM!"
+  end
 
+  def self.all
+    @@all
+  end
 end
 
 volvo_lightning = Car.new("Volvo", "Lightning")
